@@ -1,0 +1,10 @@
+selenium
+pymongo
+flask
+gunicorn
+validators
+sentence-transformers
+scikit-learn
+numpy
+pandas
+joblib

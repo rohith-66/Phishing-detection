@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile   # your existing scraper Dockerfile
+    container_name: scraper_service
+    restart: always
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.app   # NEW Dockerfile for Flask+Gunicorn
+    container_name: flask_app
+    restart: always
+    expose:
+      - "8000"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_proxy
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app

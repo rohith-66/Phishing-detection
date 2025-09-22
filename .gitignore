@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
+
+# Models and artifacts
+*.joblib
+sentence_transformer_model/
+feature_scaler.joblib
+top_tokens.json
+model_metadata.json
+
+# Docker
+*.pid
