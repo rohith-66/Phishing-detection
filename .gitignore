@@ -26,3 +26,4 @@ model_metadata.json
 
 # Docker
 *.pid
+phishing_urls.csv
